@@ -8,11 +8,11 @@ export {
 	## The speed of a connection that is defined as "too fast" and
 	## leads to the :bro:see:`ConnBurst::detected` event being
 	## generated.  Defined in Mbps (Megabits per second).
-	const speed_threshold: double = 2.0;
+	const speed_threshold: double = 50.0;
 
 	## The threshold of data that must be transferred before connection
 	## polling to measure speed is started.  Defined in MB (megabytes).
-	const size_threshold: count = 5 &redef;
+	const size_threshold: count = 100 &redef;
 
 	## An event to indicate that a big and fast connection (bursty 
 	## connection) was detected.

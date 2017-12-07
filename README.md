@@ -6,12 +6,10 @@ connections which transfer a large amount of data quickly.  Once a bursty
 connection is identified it is no longer watched for being bursty.
 
 When a bursty connection is identified, the event `ConnBurst::detected` is 
-generated and a log is written to a log stream with the named `conn_burst`.
+generated and a log is written to a log stream named `conn_burst`.
 
 Installation
 ------------
-
-::
 
 	bro-pkg refresh
 	bro-pkg install bro/corelight/conn-burst
@@ -25,14 +23,15 @@ analysis and detection.
 
 `ConnBurst::speed_threshold` - This is a `double` value defined in Mbps and 
 it means that you consider a bursty connection on your network to be one 
-that is transferring data faster than this rate.
+that is transferring data faster than this rate. The default speed threshold
+is `50Mbps`.
 
 `ConnBurst::size_threshold` - This is a `double` value defined in MB and it 
 means that you'd like a minimum of this much traffic transferred before the 
 transfer rate of the connection is tested.  This avoids identifying a small
 connection that happens to tranfer data quickly as bursty since it's likely 
 that a small and fast connection doesn't really matter that much to your 
-analysis.
+analysis. The default size threshold is `100MB`.
 
 Acknowledgements
 ----------------
