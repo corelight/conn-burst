@@ -33,6 +33,20 @@ connection that happens to tranfer data quickly as bursty since it's likely
 that a small and fast connection doesn't really matter that much to your 
 analysis. The default size threshold is `100MB`.
 
+Usage
+-----
+
+When a connection burst is detected, it will generate the following event.
+You can copy and paste this into your script if you want to do something
+based on a connection bursting.
+
+```bro
+event ConnBurst::detected(c: connection, rate_in_mbps: double)
+	{
+	# Do something here!
+	}
+```
+
 Acknowledgements
 ----------------
 
